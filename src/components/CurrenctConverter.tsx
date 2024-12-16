@@ -73,7 +73,7 @@ export const CurrencyConverter: React.FC = () => {
                     currencies.map((curr) => (
                         <div key={curr} className='flex items-center gap-2'>
                             <span className='font-semibold'>{curr}:</span>
-                            <span className=''>{numberWithSpaces(Number(exchangeRates[curr].toFixed(2)))}</span>
+                            <span className=''>{numberWithSpaces(Number(exchangeRates[curr]?.toFixed(2)))}</span>
                         </div>
                     ))
                 }
