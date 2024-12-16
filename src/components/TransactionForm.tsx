@@ -29,6 +29,7 @@ export const TransactionForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (amount === '' || category === '' || Number(amount) === 0) return;
     addTransaction({
       amount: parseFloat(amount),
       category,
@@ -113,7 +114,8 @@ export const TransactionForm: React.FC = () => {
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">Comment</label>
-            <textarea
+            <input
+              type="text"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               className="w-full p-2 border rounded resize-y"
